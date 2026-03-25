@@ -1,33 +1,32 @@
 ![Jogo da Velha em Python - Lógica de Programação e Matrizes](https://github.com/ryanvmorais/python-jogo-da-velha/blob/main/assets/jogo-da-velha-python-logica-programacao.png?raw=true)
 
-# ❌⭕ Jogo da Velha em Python | Exercício de Lógica de Programação
+# 🪨📜✂️ Pedra, Papel e Tesoura em Python | Exercício de Lógica de Programação
 
-Este repositório contém um **Jogo da Velha (Tic Tac Toe)** desenvolvido em Python, projetado especificamente como um material de estudo para desenvolvedores iniciantes. O foco principal é a aplicação prática de **fundamentos da programação** e manipulação de matrizes no terminal.
+Este repositório contém o clássico jogo **Pedra, Papel e Tesoura (Jokenpô)** desenvolvido em Python, projetado especificamente como um material de estudo para desenvolvedores iniciantes. O foco principal é a aplicação prática de **fundamentos da programação** e o uso de dicionários para mapear regras de negócio no terminal.
 
 ### 🎯 Objetivo do Projeto:
-Demonstrar a aplicação de **estruturas de repetição**, **estruturas condicionais** e **Programação Orientada a Objetos (POO)** em Python. É um projeto prático perfeito para estudantes que desejam consolidar o raciocínio lógico por trás da construção de sistemas.
+Demonstrar a aplicação de **estruturas de repetição**, **manipulação de coleções (listas e dicionários)** e **Programação Orientada a Objetos (POO)** em Python. É um projeto prático ideal para estudantes que desejam entender como transformar regras do mundo real em algoritmos eficientes.
 
 ---
 
 ### 📚 O que você vai aprender com este projeto?
 Este exercício foi estruturado para consolidar conceitos essenciais de algoritmos:
 
-*   **Estruturas de Repetição:** Controle de turnos e verificação de vitória (Loops `while` e `for`).
-*   **Estruturas Condicionais:** Validação de jogadas e regras do jogo (`if/elif/else`).
-*   **Manipulação de Matrizes:** Como gerenciar dados usando índices `[linha][coluna]`.
-*   **POO (Orientada a Objetos):** Organização de código modular, limpo e reutilizável.
-*   **Interação Multiplataforma com o SO:** Uso do módulo `subprocess` em conjunto com `os.name` para detectar o sistema operacional em tempo real e executar o comando de limpeza de tela correto (`cls` no Windows ou `clear` em sistemas Unix/Mac).
+*   **Estruturas de Repetição:** Controle do fluxo contínuo de rodadas (Loop `while`).
+*   **Dicionários (Mapping):** Como substituir múltiplos `if/else` por um mapeamento lógico de vitória (`chave` vence `valor`).
+*   **Tratamento de Erros:** Uso de blocos `try/except` para validar entradas numéricas do usuário.
+*   **POO (Orientada a Objetos):** Organização de código modular através da classe `PedraPapelTesoura` e uso do `self`.
+*   **Interação Multiplataforma com o SO:** Uso do módulo `subprocess` para detectar o sistema operacional (`cls` no Windows ou `clear` em Unix/Mac) e manter a interface do terminal limpa e profissional.
 
 ---
 ### 🧠 Guia de Implementação: A Lógica por trás do Código
 Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem do raciocínio**. Confira o passo a passo da construção deste jogo:
-1. **Abstração e Modelagem:** Imagine o tabuleiro como uma matriz 3x3. No Python, usamos uma **lista de listas** para representar isso, permitindo acessar cada quadrado através de coordenadas como `tabuleiro[0][1]`.
-2. **UX e Fluxo de Jogo:** O jogo funciona em ciclos. O usuário interage via terminal, o sistema valida a jogada e utiliza o módulo `subprocess` para limpar a tela, criando a sensação de um aplicativo dinâmico e organizado.
-3. **Arquitetura com POO:** Utilizamos **Programação Orientada a Objetos (POO)** para para organizar o código. A classe `JogoDaVelha` centraliza toda a lógica e armazena o "estado" da partida (quem venceu, de quem é a vez e como está o tabuleiro).
-4. **Inicialização:** Todo início (ou reinício) de partida limpa as variáveis de controle e gera um novo tabuleiro preenchido apenas com espaços vazios (`' '`).
-5. **Algoritmo de Vitória:** Desenvolvemos uma lógica matemática que varre as **8 possibilidades de vitória**: 3 linhas, 3 colunas e 2 diagonais. Se três símbolos iguais forem detectados em sequência, o jogo identifica o vencedor.
-6. **O "Game Loop":** O coração do projeto é um loop `while True`. Ele coordena a orquestra: `desenha o tabuleiro` -> `processa jogada do usuário` -> `verifica vitória` -> `processa jogada aleatória da máquina` -> `verifica vitória` -> `repete`.
-7. **Tratamento de Erros:**  Implementamos blocos `try/except` para que o programa não quebre caso o usuário digite algo inesperado (como letras em vez de números), garantindo uma experiência estável.
+1. **Facilitando a Escolha (Listas e Índices):** Em vez de pedir para o usuário digitar "pedra" (e correr o risco dele errar uma letra e o código travar), nós usamos uma lista: `['pedra', 'papel', 'tesoura']`. O usuário só digita o número (0, 1 ou 2). O Python entende que o número 0 é a Pedra, o 1 é o Papel e o 2 é a Tesoura. Isso evita erros e deixa o jogo mais rápido.
+2. **O "Truque" do Dicionário (Regras de Vitória):** Sabe aquele monte de `if` e `else` que a gente costuma fazer? Aqui nós usamos um **Dicionário**. É como uma tabela: a gente diz que a Pedra vence a Tesoura, o Papel vence a Pedra, e assim por diante. O código só precisa olhar essa "tabela" para saber quem ganhou. É muito mais limpo e fácil de ler!.
+3. **Organizando a Casa (Classes e o tal do `self`):** Usamos uma **Classe** chamada `PedraPapelTesoura`. Pense nela como uma caixa que guarda tudo o que o jogo precisa: o placar, as regras e as jogadas. O `self` serve para o jogo saber que ele está mexendo no seu *próprio* placar e não em algo de fora. Isso evita aquela bagunça de variáveis espalhadas pelo código.
+4. **O Coração do Jogo (Game Loop):** O jogo roda dentro de um "laço" (*loop*) que não para até você pedir. Ele segue sempre essa ordem: `Limpa a tela` -> `Pede sua jogada` -> `Sorteia a jogada do computador` -> `Mostra quem venceu` -> `Pergunta se quer jogar de novo`. É assim que quase todo jogo funciona!.
+5. **Conversando com o seu Computador:** Usamos um comando especial (`subprocess`) para falar com o sistema operacional (`Windows`, `Mac` ou `Linux`). Ele descobre qual sistema você usa e limpa a tela do terminal automaticamente, deixando o jogo com uma aparência muito mais bonita e organizada.
+6. **Proteção contra Erros (Try/Except):** E se o jogo pedir um número e o usuário digitar uma letra? Normalmente o programa fecharia com um erro feio. Aqui, usamos o `try/except`, que "tenta" fazer algo e, se der erro, ele avisa o usuário educadamente em vez de travar tudo.
 
 ---
 
@@ -57,7 +56,7 @@ Para garantir que o jogo funcione corretamente, certifique-se de ter os seguinte
 ### ⚙️ Como Executar o Projeto:
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/ryanvmorais/python-jogo-da-velha.git
+   git clone https://github.com/ryanvmorais/python-pedra-papel-tesoura.git
    ``` 
 2. **Execute o script:**
 - Navegue até a **pasta do projeto** e utilize o comando abaixo no seu terminal (CMD, PowerShell ou Terminal do VS Code/PyCharm):
@@ -74,12 +73,12 @@ Para exercitar o que aprendeu, tente modificar o código e implementar estas nov
 1. **🏆  Placar Acumulado (Gerenciamento de Estado):**
 
 O desafio é criar um contador que não zere ao reiniciar uma partida.
-   * **O Conceito:** Aprenda a diferenciar variáveis que controlam a **rodada** das que controlam o **histórico do jogador**.
-   * **A Lógica:** Implemente variáveis de controle (ex: `vitorias_x` e `vitorias_o`) que persistam enquanto o programa estiver aberto. Toda vez que um vencedor for detectado, o placar deve ser atualizado e exibido no próximo turno.
-   * **O Aprendizado:** Você entenderá como manter dados consistentes em aplicações que possuem múltiplos ciclos de execução.
+   * **O Conceito:** Aprenda a diferenciar variáveis que controlam a **rodada atual** das que controlam o **histórico global do usuário**.
+   * **A Lógica:**  Implemente variáveis de controle (ex: `pontos_usuario` e `pontos_computador`) dentro do método `__init__` da classe. Garanta que, ao reiniciar o loop de jogadas, essas variáveis persistam e sejam exibidas no placar a cada novo turno.
+   * **O Aprendizado:** Você entenderá como manter dados consistentes e estados de memória em aplicações que possuem múltiplos ciclos de execução (Game Loops).
 
-2. **🤖 Modo Single Player:** Tente fazer a máquina bloquear suas jogadas em vez de apenas jogar aleatoriamente.
-3. **🎨 Cores no Terminal:** Utilize a biblioteca `colorama` para colorir o **"X"** de vermelho e o **"O"** de azul.
+2. **🤖 Modo "Melhor de 3":** Tente fazer o jogo encerrar e declarar um Grande Campeão assim que o usuário ou o computador atingir 2 vitórias.
+3. **⏲️ Efeito de Suspense:** Utilize o módulo `time` e a função `time.sleep(1)` para exibir "Pedra...", "Papel..." e "Tesoura!" com pausas antes de revelar a jogada da máquina.
 
 ---
 
@@ -87,7 +86,7 @@ O desafio é criar um contador que não zere ao reiniciar uma partida.
 
 Aprender algo novo tem seus desafios, mas estou aqui para caminharmos juntos! Se você encontrou algum erro, teve dificuldade em rodar o jogo ou pensou em uma funcionalidade incrível para adicionar:
 
-*   **Abra uma [Issue](https://github.com/ryanvmorais/python-jogo-da-velha/issues):** Clique no link e descreva sua dúvida ou sugestão. É a melhor forma de trocarmos conhecimento e ajudarmos outras pessoas que tenham a mesma dúvida!
+*   **Abra uma [Issue](https://github.com/ryanvmorais/python-pedra-papel-tesoura/issues):** Clique no link e descreva sua dúvida ou sugestão. É a melhor forma de trocarmos conhecimento e ajudarmos outras pessoas que tenham a mesma dúvida!
 *   **Me mande um E-mail:** Se preferir algo mais privado, pode me escrever em [**contato@ryanmorais.com.br**](mailto:contato@ryanmorais.com.br).
 
 Ficarei muito feliz em ver seu progresso e receber seu feedback para melhorar cada vez mais nossos materiais de estudo! 🤝
