@@ -1,6 +1,6 @@
 # 🤝 Como Contribuir no Pedra Papel Tesoura
 
-Este repositório é um espaço dedicado ao aprendizado de Python, Dicionários e Orientação a Objetos (POO). Sua colaboração é fundamental para fortalecer este material didático para a comunidade de desenvolvedores iniciantes!
+Este repositório é um espaço dedicado ao aprendizado de Python, Dicionários e Orientação a Objetos (POO). Sua colaboração é fundamental para fortalecer este material didático para a comunidade de desenvolvedores!
 
 ## 🚀 O que você pode fazer?
 
@@ -23,3 +23,4 @@ Este repositório é um espaço dedicado ao aprendizado de Python, Dicionários 
 - O código deve respeitar o paradigma de **Programação Orientada a Objetos** definido na classe `PedraPapelTesoura`.
 - Mantenha a **coerência na nomenclatura** das variáveis (sempre em português e seguindo o padrão snake_case).
 - O objetivo principal é a **didática**: prefira um código legível e bem comentado a um código excessivamente complexo.
+
