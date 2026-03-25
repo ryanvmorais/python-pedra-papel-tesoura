@@ -1,9 +1,11 @@
 # ---------------------------------------------------------
-# DEPENDENCIAS DO PROJETO: JOGO DA VELHA
+# DEPENDÊNCIAS DO PROJETO: PEDRA, PAPEL E TESOURA
 # ---------------------------------------------------------
-# Este projeto utiliza exclusivamente a Biblioteca Padrao 
-# do Python (Standard Library), como: 'random' e 'os'.
+# Este projeto utiliza exclusivamente a Biblioteca Padrão 
+# do Python (Standard Library), como: 'random' e 'subprocess'.
 #
-# Nao e necessario instalar pacotes externos via pip.
+# Não é necessário instalar pacotes externos via pip.
 # ---------------------------------------------------------
-# Para rodar o jogo: python main.py
+# Para rodar o jogo: python PedraPapelTesoura.py
+# ---------------------------------------------------------
+
