@@ -19,7 +19,7 @@ Este exercício foi estruturado para consolidar conceitos essenciais de algoritm
 *   **Interação Multiplataforma com o SO:** Uso do módulo `subprocess` para detectar o sistema operacional (`cls` no Windows ou `clear` em Unix/Mac) e manter a interface do terminal limpa e profissional.
 
 ---
-### 🧠 Guia de Implementação: A Lógica por trás do Código
+### 🧠 Guia de Implementação (A Lógica por trás do Código):
 Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem do raciocínio**. Confira o passo a passo da construção deste jogo:
 1. **Facilitando a Escolha (Listas e Índices):** Em vez de pedir para o usuário digitar "pedra" (e correr o risco dele errar uma letra e o código travar), nós usamos uma lista: `['pedra', 'papel', 'tesoura']`. O usuário só digita o número (0, 1 ou 2). O Python entende que o número 0 é a Pedra, o 1 é o Papel e o 2 é a Tesoura. Isso evita erros e deixa o jogo mais rápido.
 2. **O "Truque" do Dicionário (Regras de Vitória):** Sabe aquele monte de `if` e `else` que a gente costuma fazer? Aqui nós usamos um **Dicionário**. É como uma tabela: a gente diz que a Pedra vence a Tesoura, o Papel vence a Pedra, e assim por diante. O código só precisa olhar essa "tabela" para saber quem ganhou. É muito mais limpo e fácil de ler!.
