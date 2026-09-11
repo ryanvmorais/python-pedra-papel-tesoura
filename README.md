@@ -1,4 +1,4 @@
-![Jogo da Velha em Python - Lógica de Programação e Matrizes](https://github.com/ryanvmorais/python-pedra-papel-tesoura/blob/main/assets/pedra-papel-tesoura-python-logica-programacao.png?raw=true)
+![Pedra, Papel e Tesoura em Python - Lógica de Programação e Dicionários](https://github.com/ryanvmorais/python-pedra-papel-tesoura/blob/main/assets/pedra-papel-tesoura-python-logica-programacao.png?raw=true)
 
 # 🪨📜✂️ Pedra, Papel e Tesoura em Python | Exercício de Lógica de Programação
 
@@ -114,6 +114,18 @@ O desafio é criar um contador que não zere ao reiniciar uma partida.
 
 2. **🤖 Modo "Melhor de 3":** Tente fazer o jogo encerrar e declarar um Grande Campeão assim que o usuário ou o computador atingir 2 vitórias.
 3. **⏲️ Efeito de Suspense:** Utilize o módulo `time` e a função `time.sleep(1)` para exibir "Pedra...", "Papel..." e "Tesoura!" com pausas antes de revelar a jogada da máquina.
+
+---
+
+### 🎮 Continue praticando
+
+Este projeto faz parte de uma série de exercícios de lógica de programação em Python. Depois deste, experimente:
+
+* **[Jogo da Velha em Python](https://github.com/ryanvmorais/python-jogo-da-velha):** Matrizes e Programação Orientada a Objetos.
+* **[Jogo da Cobrinha em Python](https://github.com/ryanvmorais/python-jogo-da-cobrinha):** Listas dinâmicas e game loop com `curses`.
+* **[Calculadora Simples em Python](https://github.com/ryanvmorais/python-calculadora-simples):** Dicionários e tratamento de erros.
+
+Veja todos os projetos e vídeos do canal em [aprenda-com-ryan-morais](https://github.com/ryanvmorais/aprenda-com-ryan-morais).
 
 ---
 
