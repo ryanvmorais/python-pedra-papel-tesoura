@@ -1,16 +1,23 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
 clear
 echo "==========================================="
 echo "   INICIANDO PEDRA, PAPEL E TESOURA..."
 echo "==========================================="
 
-if ! command -v python3 &> /dev/null
-then
-    echo "[ERRO] Python 3 nao encontrado!"
-    echo "Por favor, instale o Python usando o seu gerenciador de pacotes."
-    exit
+if command -v uv &> /dev/null; then
+    echo "[OK] uv detectado. Iniciando o jogo..."
+    uv run main.py
+    exit 0
 fi
 
-echo "[OK] Python 3 detectado. Iniciando..."
-python3 PedraPapelTesoura.py
+if ! command -v python3 &> /dev/null; then
+    echo "[ERRO] Nem uv nem Python 3 foram encontrados!"
+    echo "Instale o uv em: https://docs.astral.sh/uv/"
+    echo "Ou o Python usando o seu gerenciador de pacotes."
+    exit 1
+fi
+
+echo "[OK] Python 3 detectado (sem uv). Iniciando..."
+python3 main.py
