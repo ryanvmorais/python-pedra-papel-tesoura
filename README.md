@@ -2,6 +2,14 @@
 
 # 🪨📜✂️ Pedra, Papel e Tesoura em Python | Exercício de Lógica de Programação
 
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)
+![deps](https://img.shields.io/badge/deps-uv-DE5FE9)
+[![CI](https://github.com/ryanvmorais/python-pedra-papel-tesoura/actions/workflows/ci.yml/badge.svg)](https://github.com/ryanvmorais/python-pedra-papel-tesoura/actions/workflows/ci.yml)
+![Lint](https://img.shields.io/badge/lint-ruff-261230)
+![Format](https://img.shields.io/badge/style-black-000000)
+![Types](https://img.shields.io/badge/types-mypy%20strict-2A6DB2)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 Este repositório contém o clássico jogo **Pedra, Papel e Tesoura (Jokenpô)** desenvolvido em Python, projetado especificamente como um material de estudo para desenvolvedores iniciantes. O foco principal é a aplicação prática de **fundamentos da programação** e o uso de dicionários para mapear regras de negócio no terminal.
 
 ### 🎯 Objetivo do Projeto:
