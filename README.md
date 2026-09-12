@@ -1,4 +1,4 @@
-![Pedra, Papel e Tesoura em Python - Lógica de Programação e Dicionários](https://github.com/ryanvmorais/python-pedra-papel-tesoura/blob/main/assets/pedra-papel-tesoura-python-logica-programacao.png?raw=true)
+![Pedra, Papel e Tesoura em Python - captura real do terminal com o placar e o resultado da rodada](https://github.com/ryanvmorais/python-pedra-papel-tesoura/blob/main/assets/pedra-papel-tesoura-terminal.svg?raw=true)
 
 # 🪨📜✂️ Pedra, Papel e Tesoura em Python | Exercício de Lógica de Programação
 
