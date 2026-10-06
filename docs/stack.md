@@ -23,7 +23,7 @@ main.py  ──►  biblioteca padrão do Python (random, os)
 ### Python 3.12+
 
 A única linguagem do projeto. 3.12 é o piso porque é a versão mínima usada nos
-outros projetos do Ryan (`hub-ryan-morais`, `webvigil`) — manter o mesmo piso
+outros projetos do Ryan (`site-ryan-morais`, `webvigil`) — manter o mesmo piso
 evita "funciona num projeto e não no outro" por causa de sintaxe.
 
 **Por que esta:** o projeto é puramente didático (lógica, dicionários, POO) —
@@ -44,7 +44,7 @@ ambiente sem precisar ativá-lo.
 ferramentas de qualidade (ruff, black, mypy, pytest) precisam de um ambiente
 isolado e reprodutível. `uv` é uma ordem de magnitude mais rápido que
 `pip`/`venv`, usa o `pyproject.toml` padrão (PEP 621) e gera um lockfile real
-(`uv.lock`) — o mesmo gerenciador usado no `hub-ryan-morais` e no `webvigil`.
+(`uv.lock`) — o mesmo gerenciador usado no `site-ryan-morais` e no `webvigil`.
 
 **Estudar:** `uv sync`, `uv run <comando>`, `uv add --dev <pacote>`, `uv lock`,
 a diferença entre `[project.dependencies]` (runtime, vazio aqui) e
