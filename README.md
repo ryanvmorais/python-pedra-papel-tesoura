@@ -24,7 +24,7 @@ Este exercício foi estruturado para consolidar conceitos essenciais de algoritm
 *   **Dicionários (Mapping):** Como substituir múltiplos `if/else` por um mapeamento lógico de vitória (`chave` vence `valor`).
 *   **Tratamento de Erros:** Uso de blocos `try/except` para validar entradas numéricas do usuário.
 *   **POO (Orientada a Objetos):** Organização de código modular através da classe `PedraPapelTesoura` e uso do `self`.
-*   **Interação Multiplataforma com o SO:** Uso do módulo `subprocess` para detectar o sistema operacional (`cls` no Windows ou `clear` em Unix/Mac) e manter a interface do terminal limpa e profissional.
+*   **Interação Multiplataforma com o SO:** Uso de `os.system` para detectar o sistema operacional (`cls` no Windows ou `clear` em Unix/Mac) e manter a interface do terminal limpa e profissional.
 
 ---
 ### 🧠 Guia de Implementação (A Lógica por trás do Código):
@@ -33,7 +33,7 @@ Para quem está começando, o maior desafio não é a sintaxe, mas a **montagem 
 2. **O "Truque" do Dicionário (Regras de Vitória):** Sabe aquele monte de `if` e `else` que a gente costuma fazer? Aqui nós usamos um **Dicionário**. É como uma tabela: a gente diz que a Pedra vence a Tesoura, o Papel vence a Pedra, e assim por diante. O código só precisa olhar essa "tabela" para saber quem ganhou. É muito mais limpo e fácil de ler!.
 3. **Organizando a Casa (Classes e o tal do `self`):** Usamos uma **Classe** chamada `PedraPapelTesoura`. Pense nela como uma caixa que guarda tudo o que o jogo precisa: o placar, as regras e as jogadas. O `self` serve para o jogo saber que ele está mexendo no seu *próprio* placar e não em algo de fora. Isso evita aquela bagunça de variáveis espalhadas pelo código.
 4. **O Coração do Jogo (Game Loop):** O jogo roda dentro de um "laço" (*loop*) que não para até você pedir. Ele segue sempre essa ordem: `Limpa a tela` -> `Pede sua jogada` -> `Sorteia a jogada do computador` -> `Mostra quem venceu` -> `Pergunta se quer jogar de novo`. É assim que quase todo jogo funciona!.
-5. **Conversando com o seu Computador:** Usamos um comando especial (`subprocess`) para falar com o sistema operacional (`Windows`, `Mac` ou `Linux`). Ele descobre qual sistema você usa e limpa a tela do terminal automaticamente, deixando o jogo com uma aparência muito mais bonita e organizada.
+5. **Conversando com o seu Computador:** Usamos um comando especial (`os.system`) para falar com o sistema operacional (`Windows`, `Mac` ou `Linux`). Ele descobre qual sistema você usa e limpa a tela do terminal automaticamente, deixando o jogo com uma aparência muito mais bonita e organizada.
 6. **Proteção contra Erros (Try/Except):** E se o jogo pedir um número e o usuário digitar uma letra? Normalmente o programa fecharia com um erro feio. Aqui, usamos o `try/except`, que "tenta" fazer algo e, se der erro, ele avisa o usuário educadamente em vez de travar tudo.
 
 ---
