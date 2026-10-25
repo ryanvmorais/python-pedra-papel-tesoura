@@ -13,7 +13,7 @@ runtime (só a biblioteca padrão do Python), com um grupo de ferramentas de
 qualidade por fora.
 
 ```
-main.py  ──►  biblioteca padrão do Python (random, os)
+main.py  ──►  biblioteca padrão do Python (random, os, sys)
 ```
 
 ---
@@ -107,6 +107,65 @@ depender de um terminal real.
 combinações de jogada sem repetir código), `monkeypatch.setattr` (substituir
 `input`/`random.choice` durante o teste), `capsys` (capturar o que foi
 impresso no terminal).
+
+---
+
+## Automação no GitHub
+
+Tudo roda em `ubuntu-26.04` (rótulo fixo, nunca `ubuntu-latest`) e as Actions
+ficam fixadas pelo SHA do commit, com a versão no comentário: uma tag pode ser
+movida depois de publicada, o SHA não.
+
+### GitHub Actions (CI)
+
+Roda o mesmo portão que você roda local — `ruff` → `black --check` → `mypy` →
+`pytest` — em todo push na `main` e em todo PR, numa matriz de Python 3.12 (o
+piso), 3.14 e 3.15. Um check verde no PR significa o mesmo que um clone limpo
+passando.
+
+**Por que esta:** o repositório já está no GitHub e o CI é grátis para repo
+público; a matriz testa o piso de verdade, em vez de só declarar `>=3.12`.
+
+**Estudar:** `on:` (gatilhos), `strategy.matrix`, `permissions: contents: read`
+(o mínimo necessário), fixar `uses:` por SHA.
+
+### CodeQL
+
+Análise estática de segurança (code scanning) do código Python, em push/PR na
+`main` e uma vez por semana (domingo) para pegar consultas novas sem mudança no
+repositório.
+
+**Por que esta:** é o scanner nativo do GitHub e grátis para repo público. Roda
+como workflow do repositório, não como o "default setup", porque o default usa
+um rótulo de runner que o repo não controla e seus runs não podem ser
+re-executados.
+
+**Estudar:** `github/codeql-action` (`init` + `analyze`), `build-mode: none`
+(Python não precisa de build), a aba Security → Code scanning.
+
+### Dependabot
+
+Abre PRs de atualização de `uv` e de `github-actions` aos domingos, um PR
+agrupado por ecossistema (minor e patch juntos; major em PR próprio). Uma versão
+nova espera 7 dias (`cooldown`) antes de virar PR.
+
+**Por que esta:** é integrado ao GitHub e entende o `uv.lock`. O cooldown evita
+adotar uma release que quebrou no dia da publicação.
+
+**Estudar:** `.github/dependabot.yml` (`groups`, `cooldown`, `schedule`), e como
+revisar um PR de bump (changelog, CI verde).
+
+### pip-audit (semanal)
+
+Toda segunda, 09:00 de São Paulo, exporta o `uv.lock` e procura CVEs conhecidas
+nas dependências travadas. Run vermelho = vulnerabilidade no lock.
+
+**Por que esta:** o CI só roda em PR e o Dependabot nem sempre abre PR de
+correção; sem esta auditoria, uma CVE nova passaria despercebida até o PR
+seguinte. Roda via `uvx`, sem ser dependência do projeto.
+
+**Estudar:** `uv export` (lock → requirements), `uvx` (rodar ferramenta sem
+instalar), `--no-deps` (auditar exatamente o conjunto travado).
 
 ---
 
