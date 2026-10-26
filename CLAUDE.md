@@ -52,7 +52,7 @@ pyproject.toml        # gerenciado por uv — sem deps de runtime, grupo dev com
                        # ruff/black/mypy/pytest
 uv.lock               # lock do grupo dev — nunca editar à mão
 .gitattributes        # LF fixo nos atalhos .sh (com CRLF o shebang quebra no Linux/macOS)
-assets/               # pedra-papel-tesoura-terminal.svg: captura do terminal no topo do README
+assets/               # pedra-papel-tesoura-python-terminal.svg: captura do terminal no topo do README
 LICENSE               # licença MIT
 CONTRIBUTING.md       # guia de contribuição (fork, Conventional Commits, portão de qualidade)
 CODE_OF_CONDUCT.md    # Contributor Covenant 2.1 (pt-BR); contato: contato@ryanmorais.com.br
